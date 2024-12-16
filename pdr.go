@@ -79,6 +79,7 @@ func CreatePDROID(c *Client, link *Link, oid OID, attrs []nl.Attr) error {
 	}
 	log.Info("101010")
 	_, err = c.Do(req)
+	log.Info("11111111111",err)
 	return err
 }
 
