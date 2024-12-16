@@ -3,7 +3,6 @@ package gtp5gnl
 import (
 	"fmt"
 	"syscall"
-	log "github.com/sirupsen/logrus"
 
 	"github.com/khirono/go-genl"
 	"github.com/khirono/go-nl"
@@ -29,7 +28,6 @@ func CreatePDR(c *Client, link *Link, pdrid int, attrs []nl.Attr) error {
 }
 
 func CreatePDROID(c *Client, link *Link, oid OID, attrs []nl.Attr) error {
-	log.Info("666")
 	flags := syscall.NLM_F_EXCL
 	flags |= syscall.NLM_F_ACK
 	req := nl.NewRequest(c.ID, flags)

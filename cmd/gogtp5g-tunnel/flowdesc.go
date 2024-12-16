@@ -7,7 +7,7 @@ import (
 	"strings"
 	"unsafe"
 
-	"github.com/huahuaLover/go-gtp5gnl"
+	"github.com/free5gc/go-gtp5gnl"
 	"github.com/khirono/go-nl"
 )
 
