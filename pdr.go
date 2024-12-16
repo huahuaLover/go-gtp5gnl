@@ -39,10 +39,14 @@ func CreatePDROID(c *Client, link *Link, oid OID, attrs []nl.Attr) error {
 	if err != nil {
 		return err
 	}
+	log.Info("777")
+
 	pdrid, ok := oid.ID()
 	if !ok {
 		return fmt.Errorf("invalid oid: %v", oid)
 	}
+	log.Info("888")
+
 	err = req.Append(&nl.AttrList{
 		{
 			Type:  LINK,
@@ -56,6 +60,7 @@ func CreatePDROID(c *Client, link *Link, oid OID, attrs []nl.Attr) error {
 	if err != nil {
 		return err
 	}
+	log.Info("888")
 	seid, ok := oid.SEID()
 	if ok {
 		err = req.Append(&nl.Attr{
@@ -66,10 +71,13 @@ func CreatePDROID(c *Client, link *Link, oid OID, attrs []nl.Attr) error {
 			return err
 		}
 	}
+	log.Info("999")
+
 	err = req.Append(nl.AttrList(attrs))
 	if err != nil {
 		return err
 	}
+	log.Info("101010")
 	_, err = c.Do(req)
 	return err
 }
